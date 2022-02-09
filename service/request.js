@@ -1,6 +1,5 @@
 const PLAY_URL = 'http://123.207.32.32:9001'
 
-// const LOGIN_BASE_URL = 'http://123.207.32.32:3000'
 const LOGIN_BASE_URL = 'http://localhost:3000'
 
 // 获取token，作为参数，放入header中（后续其他接口需要token时不需要每个都添加）

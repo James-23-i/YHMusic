@@ -69,6 +69,12 @@
         {
           "name": "pages/music-player/music-play",
           "pathName": "pages/music-player/music-play",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home-profile/home-profile",
+          "pathName": "pages/home-profile/home-profile",
           "scene": null
         }
       ]

@@ -7,12 +7,15 @@
     "pages/music-detail/music-detail",
     "pages/music-search/childCpns/best-songs/best-songs",
     "pages/music-player/music-play",
-    "pages/play-list/play-list"
+    "pages/play-list/play-list",
+    "pages/home-profile/home-profile"
   ],
   "usingComponents": {
     "van-icon": "@vant/weapp/icon/index"
   },
-  "requiredBackgroundModes": ["audio"],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fafafa",
@@ -32,6 +35,12 @@
         "text": "视频",
         "iconPath": "/assets/images/tabbar/video.png",
         "selectedIconPath": "/assets/images/tabbar/video_active.png"
+      },
+      {
+        "pagePath": "pages/home-profile/home-profile",
+        "text": "我的",
+        "iconPath": "/assets/images/tabbar/profile.png",
+        "selectedIconPath": "/assets/images/tabbar/profile_active.png"
       }
     ]
   },
