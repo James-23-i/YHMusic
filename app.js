@@ -24,7 +24,7 @@ App({
   async onCheck() {
     // 登录配置（判断是否有token，是否过期，token是否正确）
     const token = wx.getStorageSync('token')   // 判断 token 是否存在
-    const checkResult = await checkToken(token)     // 判断 token 是否过期，无效
+    const checkResult = await checkToken()     // 判断 token 是否过期，无效
     console.log(checkResult);
     const sessionResult = await checkSession()  // 判断 session_key 是否过期
     if (!token || checkResult.errorCode || !sessionResult) {
