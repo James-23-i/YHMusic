@@ -1,0 +1,14 @@
+<!--components/relate-video/relate-video.wxml-->
+<view class="relate-video">
+  <block wx:for="{{ relateVideos }}" wx:key="vid">
+    <view class="item">
+      <view class="image">
+        <image class="img" src="{{ item.coverUrl }}" mode="heightFix"></image>
+      </view>
+      <view class="content">
+        <view class="title">{{ item.title }}</view>
+        <view class="userName">{{ item.creator[0].userName }}</view>
+      </view>
+    </view>
+  </block>
+</view>

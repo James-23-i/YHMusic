@@ -1,0 +1,11 @@
+<!--components/hot-song/hot-song.wxml-->
+<!-- <scroll-view class="song" scroll-x> -->
+  <block wx:for="{{ song }}" wx:key="id">
+    <view class="item" style="width:{{ songWidth }}rpx" bindtap="songItemToDetail" data-id="{{ item.id }}">
+      <view class="top">
+        <image class="image" src="{{ item.coverImgUrl }}" mode="widthFix"></image>
+      </view>
+      <view class="bottom">{{ item.name }}</view>
+    </view>
+  </block>
+<!-- </scroll-view> -->

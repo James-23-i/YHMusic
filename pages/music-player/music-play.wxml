@@ -1,0 +1,59 @@
+<!--pages/music-player/music-play.wxml-->
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+<view class="music-player">
+  <image class="bg-image" src="{{ musicPlayer.al.picUrl }}" mode="aspectFill"></image>
+  <view class="bg-color"></view>
+  <view class="custom-nav-height" style="height: {{ statusBarHeight }}px"></view>
+  <custom-nav bindnav="nav" current="{{ current }}">
+    <!-- <view slot="left"><text>返回</text></view> -->
+    <view slot="center">
+      <view class="slot-default-center">
+        <text class="{{ current === 0 ? 'active': 'deactive'}}" data-current="{{ 0 }}">歌曲</text>
+        <text>|</text>
+        <text class="{{ current === 1 ? 'active': 'deactive' }}" data-current="{{ 1 }}">歌词</text>
+      </view>
+    </view>
+  </custom-nav>
+  <swiper bindchange="swiperChange" style="height: {{ contentHeight }}px">
+    <swiper-item class="songs">
+      <view class="img">
+        <image class="image animation" style="animation-play-state: {{ isRunning }};width:{{ imgWidth }}px;" mode="widthFix" src="{{ musicPlayer.al.picUrl }}"></image>
+      </view>
+      <view class="info">
+        <view class="song-name">{{ musicPlayer.name }}</view>
+        <view class="song-name-small">{{ musicPlayer.name }}</view>
+        <view class="song-alia" wx:if="{{ musicPlayer.alia[0] }}">专辑：{{ musicPlayer.alia[0] }}</view>
+      </view>
+      <view class="geci">{{ lyrics }}</view>
+      <view class="progress">
+        <slider value="{{ sliderValue }}" bindchange="sliderChange" bindchanging="sliderChanging" block-size="{{ 12 }}">
+        </slider>
+        <view class="time">
+          <view class="start">{{ format.formatTime(currentTime) }}</view>
+          <view class="end">{{ format.formatTime(durationTime) }}</view>
+        </view>
+      </view>
+      <view class="play">
+        <image bindtap="changePlayWay" class="icon mulType" mode="widthFix"
+          src="../../assets/images/icon/{{ playWay[playWayIndex] }}.png"></image>
+        <image bindtap="changePreSong" class="icon preSong" mode="widthFix" src="../../assets/images/icon/preSong.png">
+        </image>
+        <image bindtap="changeWithPause" class="icon pauseWidthplay" mode="widthFix"
+          src="../../assets/images/icon/{{ pauseWidthplay }}.png"></image>
+        <image bindtap="changeNextSong" class="icon nextSong" mode="widthFix"
+          src="../../assets/images/icon/nextSong.png"></image>
+        <image class="icon list" mode="widthFix" src="../../assets/images/icon/songList.png"></image>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <!-- 当前歌词向上的高度，currentIndex * 35，设置第一句最后一句padding-top，或者 margin-top来实现歌词上下空白 -->
+      <scroll-view scroll-y scroll-with-animation scroll-top="{{ scrollLyricTop }}" class="lyric-list">
+        <block wx:for="{{ lyricList }}" wx:key="index">
+          <view
+            style="padding-top: {{ index === 0 ? (contentHeight / 3) : 0 }}px; padding-bottom: {{ index === lyricList.length - 1 ? (contentHeight / 2 - 80) : 0 }}px"
+            class="item {{ currentIndex === index  ? 'lyricActive' : '' }} ">{{ item.text }}</view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

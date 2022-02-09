@@ -1,0 +1,34 @@
+<!--pages/music-search/music-search.wxml-->
+<view class="music-search">
+  <van-search show-action="{{ keywords }}" bind:change="changeSearch" bind:search="toSearch" value="{{ keywords }}"
+    background="#fff" placeholder="请搜索歌曲"></van-search>
+  <view class="hot" wx:if="{{ !keywords.length && !searchSongs.length }}">
+    <area-header title="热门搜索"><text></text></area-header>
+    <view class="search-list">
+      <block wx:for="{{ searchList }}" wx:key="index">
+        <view class="item" bindtap="bestSearch" data-keywords="{{ item.first }}">
+          <van-tag class="tag" plain type="success" size="medium">{{ item.first }}</van-tag>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="search-info" wx:if="{{ !isSearch }}">
+    <view class="info" wx:if="{{ keywords }}">搜索"{{ keywords }}"</view>
+    <!-- <block wx:for="{{ searchSongs }}" wx:key="id"> -->
+    <block wx:for="{{ songRichNodes }}" wx:key="index">
+      <view class="show" wx:if="{{ searchSongs.length > 0 }}">
+        <!-- <view class="item" bindtap="searchItemToKeywords" data-keywords="{{ item.keyword }}"> -->
+        <view class="item" wx:if="{{ songRichNodes[0].length > 0 }}" bindtap="searchItemToKeywords"
+          data-index="{{ index }}">
+          <van-icon class="icon" name="search" />
+          <!-- <text>{{ item.keyword }}</text> -->
+          <rich-text class="text" nodes="{{ item }}"></rich-text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="best-songs" wx:if="{{ bestSongs.length > 0 && isSearch }}">
+    <area-header title="最佳匹配"><text></text></area-header>
+    <song-detail bindnav2musicPlay="nav2musicPlay" songDetail="{{ bestSongs }}"></song-detail>
+  </view>
+</view>

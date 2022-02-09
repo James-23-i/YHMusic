@@ -1,0 +1,40 @@
+/* components/recommend-song/recommend-song.wxss */
+.recommend-song {
+  margin-top: 10rpx;
+}
+
+.recommend-song .item {
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+}
+
+.recommend-song .item .image {
+  width: 120rpx;
+  width: 120rpx;
+  border-radius: 10rpx;
+}
+
+.recommend-song .item .content {
+  height: 120rpx;
+  padding-left: 20rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item .content .name {
+  font-size: 14px;
+}
+
+.item .content .artistName {
+  font-size: 12px;
+  color: gray;
+}
+
+.recommend-song .item .icon {
+  width: 60rpx;
+  color: gray;
+}

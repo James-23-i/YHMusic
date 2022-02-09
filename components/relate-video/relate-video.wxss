@@ -1,0 +1,35 @@
+/* components/relate-video/relate-video.wxss */
+.item {
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item .image {
+  /* width: 40%; */
+}
+
+.item .image .img {
+  width: 85%;
+  height: 85%;
+  border-radius: 10rpx;
+}
+
+.item .content {
+  width: 60%;
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.item .content .title {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.item .content .userName {
+  font-weight: 300;
+  font-size: 12px;
+}

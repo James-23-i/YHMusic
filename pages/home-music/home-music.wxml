@@ -1,0 +1,47 @@
+<!--pages/home-music/home-music.wxml-->
+<view class="home-music">
+  <van-search bind:click-input="changeSearch" background="#fff" disabled placeholder="请搜索歌曲"></van-search>
+  <progress percent="{{ sliderValue }}"/>
+  <swiper style="height: {{ swiperHeight }}px" class="swiper" autoplay circular indicator-dots>
+    <block wx:for="{{ musicBanner }}" wx:key="targetId">
+      <swiper-item class="item">
+        <image mode="widthFix" bindload="changeImageLoad" class="swiper-image" src="{{ item.imageUrl }}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 传递参数时是字符串类型直接传递，动态参数类型加上 {{}}，传递过去的参数都是小写的 -->
+  <view class="recommend" wx:if="{{ recommendSong.length > 0 }}">
+    <area-header bindnavToMusicDetail="navToMusicDetail" title="推荐歌曲" data-idx="{{ 1 }}"></area-header>
+    <recommend-song bindnav2musicPlay="nav2musicPlay" recommends="{{ recommendSong }}"></recommend-song>
+  </view>
+  <view class="hot" wx:if="{{ allSong.playlists.length > 0 }}">
+    <area-header bindnavToMusicDetail="navToPlayList" data-songType="hot" title="热门歌单"></area-header>
+    <scroll-view class="song" scroll-x>
+      <song song="{{ allSong.playlists }}" songWidth="{{ 200 }}" bindnavToSongDetail="navToSongItem"></song>
+    </scroll-view>
+  </view>
+  <view class="china" wx:if="{{ chinaSong.playlists.length > 0 }}">
+    <area-header bindnavToMusicDetail="navToPlayList" data-songType="china" title="最新华语"></area-header>
+    <scroll-view class="song" scroll-x>
+      <song song="{{ chinaSong.playlists }}" songWidth="{{ 200 }}" bindnavToSongDetail="navToSongItem"></song>
+    </scroll-view>
+  </view>
+  <view class="up" wx:if="{{ rankSong[0] }}">
+    <area-header title="飙升榜"><text></text></area-header>
+    <rank-song bindnavToMusicDetail="navToMusicDetail" songs="{{ rankSong }}"></rank-song>
+  </view>
+</view>
+
+<view class="play-bar" wx:if="{{ musicPlayer }}" bindtap="bar2musicPlay">
+  <view class="left">
+    <image style="animation-play-state: {{ isRunning }}" class="image animation" src="{{ musicPlayer.al.picUrl }}"></image>
+    <view class="name">
+      <text>{{ musicPlayer.name }}</text>
+      <text> - {{ musicPlayer.ar[0].name }}</text>
+    </view>
+  </view>
+  <view class="right">
+    <image catchtap="toggleClick" class="toggle" src="../../assets/images/icon/{{ pauseWidthplay }}.png" mode="widthFix"></image>
+    <image class="list" src="../../assets/images/icon/songList.png" mode="widthFix"></image>
+  </view>
+</view>

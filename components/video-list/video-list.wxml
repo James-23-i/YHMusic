@@ -1,0 +1,24 @@
+<!--components/video-list/video-list.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="wrapper">
+  <view class="video">
+    <block wx:for="{{ videoList }}" wx:key="id">
+      <!-- 点击跳转并且传递值 -->
+      <view class="item" bindtap="navToMvDetail" data-item="{{ item }}">
+        <view class="image-desc">
+          <image class="image" src="{{ item.cover }}" mode="widthFix"></image>
+          <view class="play">
+            <view class="play-item">
+              <view class="playCount">
+                <van-icon name="play-circle" />
+                <text class="text">{{ format.formatPlayCount(item.playCount)  }}</text>
+              </view>
+              <view class="playTime">{{ format.formatTime(item.mv.videos[0].duration) }}</view>
+            </view>
+          </view>
+        </view>
+        <view class="name">{{ item.name }} - {{ item.artistName }}</view>
+      </view>
+    </block>
+  </view>
+</view>

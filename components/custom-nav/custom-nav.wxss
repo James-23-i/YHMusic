@@ -1,0 +1,25 @@
+/* components/custom-nav/custom-nav.wxss */
+.custom-nav {
+  display: flex;
+  height: 44px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.slot-default-left {
+  display: none;
+}
+
+.left-slot:empty + .slot-default-left {
+  display: block;
+}
+
+.n-left, .n-right {
+  width: 100rpx;
+}
+
+.n-center {
+  flex: 1;
+  font-size: 14px;
+}

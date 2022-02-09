@@ -1,0 +1,14 @@
+<!--pages/video-detail/video-detail.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="video-detail">
+  <video referrer-policy="origin" class="video" src="{{ mvUrl }}" autoplay></video>
+  <view class="detail">
+    <view class="desc">{{ detailMv.name }}</view>
+    <view class="name">{{ detailMv.artistName }}</view>
+    <view class="play">{{ format.formatPlayCount(detailMv.playCount) }}次播放 - {{ detailMv.publishTime }}</view>
+    <view class="relateVideos">
+      <view class="relate">推荐视频</view>
+      <relate-video relateVideos="{{ relateVideos }}"></relate-video>
+    </view>
+  </view>
+</view>

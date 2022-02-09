@@ -1,0 +1,9 @@
+<!--pages/music-detail/music-detail.wxml-->
+<view class="music-detail">
+  <view class="detail-item" wx:if="{{ songItemDetail }}">
+    <song-detail-top songItemDetail="{{ songItemDetail }}"></song-detail-top>
+    <song-detail bindnav2musicPlay="nav2musicPlay" songDetail="{{ songItemDetail.tracks }}"></song-detail>
+  </view>
+  <area-header title="{{ name }}"><text></text></area-header>
+  <song-detail bindnav2musicPlay="nav2musicPlay" wx:if="{{ songDetail }}" songDetail="{{ songDetail }}"></song-detail>
+</view>

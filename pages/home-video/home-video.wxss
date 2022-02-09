@@ -1,0 +1,13 @@
+/* pages/home-video/home-video.wxss */
+page {
+  box-sizing: border-box;
+}
+
+.loading {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}

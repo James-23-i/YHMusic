@@ -1,0 +1,14 @@
+<!--components/recommend-song/recommend-song.wxml-->
+<view class="recommend-song">
+  <block wx:for="{{ recommends }}" wx:key="id">
+    <view class="item" bindtap="nav2musicPlay" data-id="{{ item.id }}" data-playlists="{{ recommends }}"
+      data-playlistindex="{{ index }}">
+      <image class="image" src="{{ item.al.picUrl }}" mode="widthFix"></image>
+      <view class="content">
+        <view class="name">{{ item.name }}</view>
+        <view class="artistName">{{ item.name }} · {{ item.ar[0].name }}</view>
+      </view>
+      <van-icon name="arrow" class="icon" />
+    </view>
+  </block>
+</view>

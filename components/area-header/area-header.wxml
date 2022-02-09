@@ -1,0 +1,17 @@
+<!--components/area-header/area-header.wxml-->
+<view class="area-header">
+  <view class="title">{{ title }}</view>
+  <view class="r-header">
+    <view class="slot">
+      <slot></slot>
+    </view>
+    <view class="default">
+      <!-- 传递事件 -->
+      <view class="more" bindtap="moreMusic">
+        <view>更多</view>
+        <!-- <image class="image" mode="widthFix" src="../../assets/images/icon/more.png"></image> -->
+        <van-icon name="arrow" />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+// 只支持es5的语法
+
+function formatPlayCount(count) {
+  var counter = parseInt(count)
+  if (count > 10000000) {
+    counter = (count / 10000000).toFixed(1) + '亿'
+  } else if (count > 10000) {
+    counter = (count / 10000).toFixed(1) + '万'
+  } else {
+    counter = counter
+  }
+  return counter
+}
+
+function addZero(str) {
+  str = str.toString()
+  return ("00" + str).slice(str.length)
+}
+
+function formatTime(duration) {
+  // 毫秒
+  duration = duration / 1000
+  var minute = Math.floor(duration / 60)
+  var second = Math.floor(duration) % 60
+  return addZero(minute) + ":" + addZero(second)
+}
+
+function formatDate(date) {
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+  return [year, month, day].map(formatNumber).join('/')
+  // return `${[year, month, day].map(formatNumber).join('/')} ${[hour, minute, second].map(formatNumber).join(':')}`
+}
+
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : ('0' + n)
+}
+
+module.exports = {
+  formatPlayCount: formatPlayCount,
+  formatTime: formatTime,
+  formatDate: formatDate
+}

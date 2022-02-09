@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "area-header": "/components/area-header/area-header",
+    "song-detail": "/components/song-detail/song-detail",
+    "song-detail-top": "/components/song-detail-top/song-detail-top"
+  }
+}

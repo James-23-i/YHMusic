@@ -1,0 +1,140 @@
+/* pages/music-player/music-play.wxss */
+page {
+  color: #fff;
+}
+
+.active {
+  color: #fff;
+}
+
+.deactive {
+  color: rgba(181, 181, 181, .5);
+}
+
+.slot-default-center text {
+  margin-right: 10rpx;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.bg-color {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.songs {
+  display: flex;
+  flex-direction: column;
+}
+
+.songs {
+  padding: 15px 25px;
+  box-sizing: border-box;
+}
+
+.songs .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 4;
+  /* background-color: #f99; */
+}
+
+.songs .img .image {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.songs .info .song-name{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.song-name-small, .song-alia {
+  font-size: 12px;
+}
+
+.songs .geci {
+  flex: 1;
+  /* background-color: #f00; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.songs .time {
+  font-size: 12px;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.songs .play {
+  display: flex;
+  height: 150rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.songs .play .icon {
+  width: 7%;
+}
+
+.songs .play .list {
+  width: 6%;
+}
+
+.songs .play .pauseWidthplay {
+  width: 15%;
+}
+
+.songs .info {
+  padding: 20rpx 0;
+}
+
+.lyric-list {
+  height: 100%;
+  /* overflow: hidden; */
+  /* scroll-view 直接设置padding会出现内容消失 */
+  padding: 200rpx 0;
+}
+
+.lyric-list .item {
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 14px;
+}
+
+.lyric-list .lyricActive {
+  color: aquamarine;
+  font-size: 18px;
+}
+
+/* 播放时图片旋转 */
+@keyframes imgAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animation {
+  animation: imgAnimation 30s linear infinite;
+}

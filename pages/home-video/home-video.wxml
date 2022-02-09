@@ -1,0 +1,5 @@
+<!--pages/home-video/home-video.wxml-->
+<view class="home-video" style="padding-bottom: {{ loadingHeight }}px">
+  <video-list class="video-list" videoList="{{ videoList }}" bindchangeNavTo="changeNavTo"/>
+  <view style="height: {{ loadingHeight }}px" wx:if="{{ showLoading }}" class="loading"><van-loading color="#000000" size="18px">加载中...</van-loading></view>
+</view>

@@ -1,0 +1,77 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/home-video/home-video",
+          "pathName": "pages/home-video/home-video",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/video-detail/video-detail",
+          "pathName": "pages/video-detail/video-detail",
+          "query": "id=14480854",
+          "scene": null
+        },
+        {
+          "name": "pages/home-music/home-music",
+          "pathName": "pages/home-music/home-music",
+          "query": "id=14480854",
+          "scene": null
+        },
+        {
+          "name": "pages/music-detail/music-detail",
+          "pathName": "pages/music-detail/music-detail",
+          "query": "rankName=\"upSong\"",
+          "scene": null
+        },
+        {
+          "name": "pages/music-detail/music-detail",
+          "pathName": "pages/music-detail/music-detail",
+          "query": "id=6986681417",
+          "scene": null
+        },
+        {
+          "name": "pages/music-search/music-search",
+          "pathName": "pages/music-search/music-search",
+          "query": "id=6986681417",
+          "scene": null
+        },
+        {
+          "name": "pages/music-player/music-play",
+          "pathName": "pages/music-player/music-play",
+          "query": "ids=1901371647",
+          "scene": null
+        },
+        {
+          "name": "pages/home-music/home-music",
+          "pathName": "pages/home-music/home-music",
+          "query": "rankName=\"upSong\"",
+          "scene": null
+        },
+        {
+          "name": "pages/play-list/play-list",
+          "pathName": "pages/play-list/play-list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/music-player/music-play",
+          "pathName": "pages/music-player/music-play",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

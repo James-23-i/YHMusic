@@ -1,0 +1,38 @@
+/* pages/music-search/music-search.wxss */
+page {
+  padding: 0 20rpx;
+}
+.search-list {
+  display: flex;
+  height: 200rpx;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-list .item {
+  margin-right: 20rpx;
+}
+
+.search-list .item .tag {
+  width: 100%;
+}
+
+.search-info .info {
+  color: green;
+}
+
+.search-info .item {
+  height: 60rpx;
+  align-items: center;
+  display: flex;
+}
+
+.search-info .item .icon {
+  margin-top: 8rpx;
+}
+
+.search-info .item .text {
+  margin-left: 10rpx;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "video-list": "/components/video-list/video-list",
+    "van-loading": "@vant/weapp/loading/index"
+  },
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+}

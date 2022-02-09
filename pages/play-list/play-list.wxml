@@ -1,0 +1,11 @@
+<!--pages/play-list/play-list.wxml-->
+<view class="play-list">
+  <van-tabs animated active="{{ active }}" bind:change="onChange">
+    <van-tab title="热门"></van-tab>
+    <van-tab title="华语"></van-tab>
+    <van-tab title="古风"></van-tab>
+    <van-tab title="欧美"></van-tab>
+    <van-tab title="流行"></van-tab>
+  </van-tabs>
+  <song class="song" bindnavToSongDetail="navToSongItem" song="{{ songMap[active].playlists }}" songWidth="{{ 348 }}"></song>
+</view>

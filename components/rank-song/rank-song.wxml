@@ -1,0 +1,17 @@
+<!--components/rank-song/rank-song.wxml-->
+<view class="rank-song">
+  <block wx:for="{{ songs }}" wx:key="name" wx:for-item="item1">
+    <view class="item" bindtap="navToMusicDetail" data-idx="{{ index }}">
+      <view class="left">
+        <view class="name">{{ item1.name }}</view>
+        <block wx:for="{{ item1.songs }}" wx:for-item="item2" wx:for-index="index2" wx:key="id">
+          <view class="songs">{{ index2 + 1 }}. {{ item2.name }} <text style="color: gray">- {{ item2.ar[0].name }}</text></view>
+        </block>
+      </view>
+      <view class="right">
+        <!-- 保持纵横比缩放图片，保证短边能完全显示出来 -->
+        <image mode="aspectFill" src="{{ item1.coverImgUrl }}" class="image"></image>
+      </view>
+    </view>
+  </block>
+</view>

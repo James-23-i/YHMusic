@@ -1,0 +1,40 @@
+/* components/rank-song/rank-song.wxss */
+.rank-song {
+  width: 100%;
+}
+
+.rank-song .item {
+  /* height: 200rpx; */
+  display: flex;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.rank-song .item:not(:first-of-type) {
+  margin-top: 20rpx;
+}
+
+.rank-song .item .left {
+  background-color: rgb(128, 128, 128, .1);
+  flex: 1;
+  padding: 20rpx;
+}
+
+.rank-song .item .left .name {
+  font-size: 16px;
+  text-align: left;
+}
+
+.rank-song .item .left .songs {
+  font-size: 12px;
+  margin-top: 10rpx;
+}
+
+.rank-song .item .right {
+  width: 200rpx;
+}
+
+.rank-song .item .right .image {
+  width: 100%;
+  height: 100%;
+}

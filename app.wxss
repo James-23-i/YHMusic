@@ -1,0 +1,16 @@
+/**app.wxss**/
+page {
+  background-color: #fafafa;
+  /* 设置 padding 时盒子模型会撑大，需要重新设置盒子模型 */
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 

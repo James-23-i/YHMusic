@@ -1,0 +1,22 @@
+<!--components/custom-nav/custom-nav.wxml-->
+<view class="custom-nav">
+  <view class="n-left">
+    <view class="left-slot">
+      <slot name="left"></slot>
+    </view>
+    <view class="slot-default-left" bindtap="navToHomeMusic">
+      <van-icon name="arrow-left" />
+    </view>
+  </view>
+  <view class="n-center">
+    <view class="center-slot">
+      <slot name="center"></slot>
+    </view>
+    <!-- <view class="slot-default-center">
+      <text class="{{ current === 0 ? 'active': ''}}">歌曲</text>
+      <text>|</text>
+      <text class="{{ current === 1 ? 'active': '' }}">歌词</text>
+    </view> -->
+  </view>
+  <view class="n-right"></view>
+</view>

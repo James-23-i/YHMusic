@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/home-music/home-music",
+    "pages/home-video/home-video",
+    "pages/video-detail/video-detail",
+    "pages/music-search/music-search",
+    "pages/music-detail/music-detail",
+    "pages/music-search/childCpns/best-songs/best-songs",
+    "pages/music-player/music-play",
+    "pages/play-list/play-list"
+  ],
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index"
+  },
+  "requiredBackgroundModes": ["audio"],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fafafa",
+    "navigationBarTitleText": "YHMusic",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home-music/home-music",
+        "text": "音乐",
+        "iconPath": "/assets/images/tabbar/music.png",
+        "selectedIconPath": "/assets/images/tabbar/music_active.png"
+      },
+      {
+        "pagePath": "pages/home-video/home-video",
+        "text": "视频",
+        "iconPath": "/assets/images/tabbar/video.png",
+        "selectedIconPath": "/assets/images/tabbar/video_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

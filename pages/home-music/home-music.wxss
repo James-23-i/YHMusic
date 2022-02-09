@@ -1,0 +1,107 @@
+/* pages/home-music/home-music.wxss */
+
+/* 当播放栏需要根据是否有歌曲才显示时，可以设置占位view设置和播放栏一样的高度撑起，就不需要用padding */
+page {
+  padding: 0 20rpx 44px;
+}
+
+.song {
+  white-space: nowrap;
+  /* 设置视口宽度为手机的宽度 */
+  width: 100vw;
+  position: relative;
+  left: -20rpx;
+}
+
+.swiper {
+  margin-top: 30rpx;
+  /* 设置圆角时不生效 -> 需要设置溢出隐藏 */
+  border-radius: 10rpx;
+  overflow: hidden;
+  /* 左上角没有圆角的bug */
+  /* transform: translateY(0); */
+}
+
+.swiper .item {
+  display: flex;
+}
+
+/* swiper 会有组件本身的高度 150px，当在小型设备轮播图的小圆点会出问题。因为内部做了定位
+  解决：动态获取image组件的高度，把动态获取的高度设置为swiper组件的高度
+*/
+.swiper .item .swiper-image {
+  width: 100%;
+  /* 不能设置在图片上，因为图片在滚动时，图片是方角的，会有一时的方角效果
+    所以在swiper上设置时，就会出现溢出，隐藏调才能显示圆角
+  */
+  /* border-radius: 10rpx;    */
+}
+
+.van-search__content {
+  background-color: #fff !important;
+}
+
+.home-music .van-search {
+  height: 70rpx;
+  border-radius: 100rpx;
+  margin-top: 10rpx;
+}
+
+.play-bar {
+  height: 88rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, .1);
+}
+
+.play-bar .left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.play-bar .right {
+  width: 135rpx;
+}
+
+.play-bar .left .image {
+  border-radius: 50%;
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.play-bar .left .name {
+  font-size: 12px;
+  margin-left: 20rpx;
+}
+
+.play-bar .right .toggle {
+  margin-right: 30rpx;
+}
+
+.play-bar .right .toggle,
+.play-bar .right .list {
+  width: 52rpx;
+  color: rgba(25, 250, 41);
+} 
+
+/* 播放时图片旋转 */
+@keyframes imgAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animation {
+  animation: imgAnimation 20s linear infinite;
+}

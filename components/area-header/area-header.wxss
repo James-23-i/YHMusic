@@ -1,0 +1,36 @@
+/* components/area-header/area-header.wxss */
+
+.area-header {
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.area-header .title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.area-header .default .image {
+  width: 100%;
+  height: 100%;
+}
+
+.area-header .more {
+  justify-content: flex-end;
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  color: gray;
+}
+
+/* js控制显示隐藏，css :empty伪类控制显示隐藏， slot默认值 */
+.default {
+  display: none;
+}
+/* 当插槽为空时，默认内容展示 */
+.slot:empty + .default {
+  display: block;
+}

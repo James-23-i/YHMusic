@@ -1,0 +1,31 @@
+/* pages/video-detail/video-detail.wxss */
+page {
+  padding-top: 225px;
+}
+
+.video {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.detail {
+  padding: 20rpx;
+}
+
+.detail .desc {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10rpx;
+}
+
+.detail .name, .detail .play {
+  font-size: 12px;
+  margin-top: 10rpx;
+}
+
+.relateVideos .relate {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 10rpx 0;
+}
